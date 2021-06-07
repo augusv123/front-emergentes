@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Temperatura
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container-fluid">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <div class="row my-5 justify-content-center ">
+        <div class="col-12  my-5 d-flex justify-content-center">
+            <div class="card" color="primary" style="border:none;">
+                <i _ngcontent-hjf-c2="" class="fas fa-temperature-high" style="font-size: 30vh;"></i>
+              
+                <span *ngIf="temperature== null" class="badge badge-pill badge-warning mt-3" style="font-size: 4vh;"> cargando...</span>
+            </div>
+            <ion-card *ngFor="let temperatura of ultimasdiez"> 
+              <ion-card-header>
+                <span style="font-size: 4vh;"> <ion-badge  color="warning">{{temperatura.value}}
+
+                </ion-badge >  °C</span>
+              </ion-card-header>
+                <ion-badge color="secondary" >{{temperatura.datetime}}</ion-badge> 
+
+              <!-- <ion-input type="number"  [(ngModel)]="temperatura.value" ></ion-input> -->
+
+            </ion-card>
+          
+        
+        </div>
+    </div>
+
+</div>
 </ion-content>
