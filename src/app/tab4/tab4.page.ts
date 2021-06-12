@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TestService } from '../test.service';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-tab4',
+  templateUrl: './tab4.page.html',
+  styleUrls: ['./tab4.page.scss'],
 })
-export class Tab3Page {
+export class Tab4Page implements OnInit {
 
   ultimasdiez 
   constructor(private testService : TestService) {}
@@ -18,7 +18,7 @@ export class Tab3Page {
   }
 
   getData(){
-    this.testService.interiorHumo().subscribe(
+    this.testService.interiorMonoxido().subscribe(
       res => {
         console.log(res)
         this.ultimasdiez = res
